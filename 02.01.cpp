@@ -8,11 +8,11 @@ berechnet und ausgibt. Die Positionszählung beginne bei 1 für das a.
 
 int main()
 {
-    char a_start = 'a';
+    char a_start = 'a' + 1;
     char input = '\0';
 
     std::cout << "Bitte geben Sie den Buchstaben ein: ? ";
     std::cin >> input;
-    std::cout << "Der Buchstabe " << input << " hat die Position " << int(input - a_start + 1) << " im Alphabet." << std::endl;
+    std::cout << "Der Buchstabe " << input << " hat die Position " << int(input - a_start) << " im Alphabet." << std::endl;
     return 0;
 }
