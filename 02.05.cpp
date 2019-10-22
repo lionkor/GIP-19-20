@@ -19,9 +19,10 @@ int main()
     int ch{ 0 };
     std::cin >> ch;
 
-    double ergebnis = ((input * 1.8 + 32.) * ((ch - 2) * (ch - 3) / 2.)) + 
-        ((input * 3.2808) * ((ch - 1) * (ch - 3) / -1.)) + 
-        ((input * 1.2957) * ((ch - 1) * (ch - 2) / 2.));
+    double ergebnis = 
+        ((input * 1.8 + 32.) * ((ch - 2) * (ch - 3) /  2.)) + 
+        ((input * 3.2808   ) * ((ch - 1) * (ch - 3) / -1.)) +
+        ((input * 1.2957   ) * ((ch - 1) * (ch - 2) /  2.)); 
     std::cout << "Das Ergebnis lautet: " << ergebnis << std::endl;
     return 0;
 }
