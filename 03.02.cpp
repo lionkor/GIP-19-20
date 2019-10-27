@@ -3,8 +3,8 @@
 
 int main()
 {
-    int largest{INT_MIN};
-    int smallest{INT_MAX};
+    int largest{INT_MIN};  // -2147483646
+    int smallest{INT_MAX}; //  2147483647
     int largest_position;
     int smallest_position;
     
