@@ -1,11 +1,12 @@
 #include <iostream>
+#include <climits>
 
 int main()
 {
     // using arbitrarily "big enough" value since not sure whether we can use <limits>
     // should probably be smallest & largest int respectively
-    int largest{-2'000'000};
-    int smallest{2'000'000};
+    int largest{INT_MIN};
+    int smallest{INT_MAX};
     int largest_position;
     int smallest_position;
     
