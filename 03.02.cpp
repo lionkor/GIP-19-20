@@ -3,8 +3,6 @@
 
 int main()
 {
-    // using arbitrarily "big enough" value since not sure whether we can use <limits>
-    // should probably be smallest & largest int respectively
     int largest{INT_MIN};
     int smallest{INT_MAX};
     int largest_position;
