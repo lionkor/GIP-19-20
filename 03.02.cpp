@@ -1,8 +1,11 @@
 #include <iostream>
+// <climits> is probably not allowed
 #include <climits>
 
 int main()
 {
+    // if climits isn't allowed, replace INT_MIN and INT_MAX 
+    // with the values in the comments
     int largest{INT_MIN};  // -2147483646
     int smallest{INT_MAX}; //  2147483647
     int largest_position;
