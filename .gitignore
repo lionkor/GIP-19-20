@@ -1,0 +1,17 @@
+*.01
+*.02
+*.03
+*.04
+*.05
+*.06
+*.07
+bin/*
+*cmake*
+*CMake*
+Makefile
+GIP-19-20.cflags
+GIP-19-20.config
+GIP-19-20.creator
+GIP-19-20.cxxflags
+GIP-19-20.files
+GIP-19-20.includes
