@@ -11,7 +11,7 @@ int main()
 
     while (!guessed)
     {
-        int guess = int(double(range_top) / 2.0 + double(range_bottom) / 2.0);
+        int guess = (range_top + range_bottom) / 2;
         char answer;
         std::cout << "Aktueller Ratebereich: " << range_bottom << " bis " << range_top
                   << std::endl;
