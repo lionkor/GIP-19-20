@@ -13,9 +13,9 @@ bin/*
 *Cache*
 CMakeFiles*
 Makefile
-GIP-19-20.cflags
-GIP-19-20.config
-GIP-19-20.creator
-GIP-19-20.cxxflags
-GIP-19-20.files
-GIP-19-20.includes
+*.cflags
+*.config
+*.creator
+*.cxxflags
+*.files
+*.includes
