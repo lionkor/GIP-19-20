@@ -5,9 +5,13 @@
 *.05
 *.06
 *.07
+*.out
+*.exe
+*.zip
 bin/*
 *cmake*
-*CMake*
+*Cache*
+CMakeFiles*
 Makefile
 GIP-19-20.cflags
 GIP-19-20.config
