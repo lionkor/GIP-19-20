@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 
 int main()
 {
@@ -17,15 +18,17 @@ int main()
     {
         if (text[i] >= 'A' && text[i] <= 'Z')
         {
-            if (text[i] + stride > 'Z')
+            if (text[i] + stride > 'Z')   
+            {
                 text[i] = char('A' - 1 + (text[i] + stride - 'Z')); // -1, because 'Z' + 1 = 'A'
+            }
             else
                 text[i] += stride;
         }
         else if (text[i] >= 'a' && text[i] <= 'z')
         {
             if (text[i] + stride > 'z')
-                text[i] = char('a' - 1 + (text[i] + stride - 'z'));
+                text[i] = char('a' - 1 + (text[i] + stride - 'z')); // -1, because 'z' + 1 = 'a'
             else
                 text[i] += stride;
         }
