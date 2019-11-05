@@ -1,11 +1,11 @@
+#include <cctype>
 #include <iostream>
 #include <string>
-#include <cctype>
 
 int main()
 {
     std::string text;
-    int stride;
+    std::size_t stride;
 
     std::cout << "Bitte geben Sie den zu verschluesselnden Text ein: ";
     std::getline(std::cin, text);
@@ -16,21 +16,16 @@ int main()
 
     for (std::size_t i = 0; i < text.size(); ++i)
     {
-        if (text[i] >= 'A' && text[i] <= 'Z')
+        if ((text[i] >= 'A' && text[i] <= 'Z') || (text[i] >= 'a' && text[i] <= 'z'))
         {
-            if (text[i] + stride > 'Z')   
+            for (std::size_t step = 0; step < stride; ++step)
             {
-                text[i] = char('A' - 1 + (text[i] + stride - 'Z')); // -1, because 'Z' + 1 = 'A'
+                text[i]++;
+                if (text[i] > 'Z' && text[i] < 'a')
+                    text[i] = 'A';
+                else if (text[i] > 'z')
+                    text[i] = 'a';
             }
-            else
-                text[i] += stride;
-        }
-        else if (text[i] >= 'a' && text[i] <= 'z')
-        {
-            if (text[i] + stride > 'z')
-                text[i] = char('a' - 1 + (text[i] + stride - 'z')); // -1, because 'z' + 1 = 'a'
-            else
-                text[i] += stride;
         }
     }
 
