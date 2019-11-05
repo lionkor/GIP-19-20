@@ -15,7 +15,7 @@ CMakeFiles*
 Makefile
 *.cflags
 *.config
-*.creator
+*.creator*
 *.cxxflags
 *.files
 *.includes

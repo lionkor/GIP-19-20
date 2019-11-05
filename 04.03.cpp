@@ -19,7 +19,7 @@ int main()
     } while (start_time_minutes < 0 || start_time_minutes > 59);
 
     std::cout << "Der erste Bus fährt also um " << start_time_hours << ":"
-              << start_time_minutes << "Uhr ." << std::endl;
+              << start_time_minutes << " Uhr ." << std::endl;
 
     do
     {

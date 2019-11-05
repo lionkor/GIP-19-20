@@ -35,5 +35,4 @@ int main()
     }
 
     std::cout << text << std::endl;
-    system("pause");
 }
