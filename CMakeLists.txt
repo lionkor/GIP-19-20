@@ -1,3 +1,7 @@
+cmake_minimum_required(VERSION 3.0)
+
+set(CMAKE_CXX_STANDARD 17)
+
 project(02.01)
 add_executable(02.01 02.01.cpp)
 
@@ -6,9 +10,6 @@ add_executable(02.02 02.02.cpp)
 
 project(02.03)
 add_executable(02.03 02.03.cpp)
-
-project(02.04)
-add_executable(02.04 02.04.cpp)
 
 project(02.04)
 add_executable(02.04 02.04.cpp)
@@ -33,3 +34,32 @@ add_executable(04.02 04.02.cpp)
 
 project(04.03)
 add_executable(04.03 04.03.cpp)
+
+# offline
+
+project(o.01.01)
+add_executable(o.01.01 offline/01.01.cpp)
+
+project(o.02.01)
+add_executable(o.02.01 offline/02.01.cpp)
+
+project(o.02.02)
+add_executable(o.02.02 offline/02.02.cpp)
+
+project(o.03.01)
+add_executable(o.03.01 offline/03.01.cpp)
+
+project(o.03.02)
+add_executable(o.03.02 offline/03.02.cpp)
+
+project(o.04.05)
+add_executable(o.04.05 offline/04.05.cpp)
+
+project(o.04.10)
+add_executable(o.04.10 offline/04.10.cpp)
+
+project(o.04.12)
+add_executable(o.04.12 offline/04.12.cpp)
+
+project(o.05.05)
+add_executable(o.05.05 offline/05.05.cpp)
