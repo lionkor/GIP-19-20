@@ -28,8 +28,6 @@ int main()
             break;
 
         last_three[index] = input;
-        if (++index == 3)
-            index = 0;
 
         index = index == 2 ? 0 : index + 1;
 
