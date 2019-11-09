@@ -31,6 +31,8 @@ int main()
         if (++index == 3)
             index = 0;
 
+        index = index == 2 ? 0 : index + 1;
+
         std::cout << "Der bisherige Gesamtverbrauch betraegt " << (total += input)
                   << std::endl
                   << "Der Durchschnitt der letzten drei Verbrauchswerte betraegt "
