@@ -35,6 +35,15 @@ add_executable(04.02 04.02.cpp)
 project(04.03)
 add_executable(04.03 04.03.cpp)
 
+project(05.01)
+add_executable(05.01 05.01.cpp)
+
+project(05.02)
+add_executable(05.02 05.02.cpp)
+
+project(05.03)
+add_executable(05.03 05.03.cpp)
+
 # offline
 
 project(o.01.01)
