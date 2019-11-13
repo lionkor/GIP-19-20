@@ -4,12 +4,15 @@
 std::string trimme(std::string s)
 {
     std::size_t begin = 0;
-    while (s.at(begin) == '+' && begin < s.size())
-        ++begin;
+    for (; begin < s.size() && s.at(begin) == '+'; ++begin)
+        ;
 
     std::size_t end = s.size() - 1;
-    while (s.at(end) == '+' && end >= 0 && end < s.size())
-        --end;
+    for (; end >= begin && s.at(end) == '+'; --end)
+        ;
+
+    if (begin > end)
+        return "";
 
     std::string final;
 
