@@ -72,3 +72,6 @@ add_executable(o.04.12 offline/04.12.cpp)
 
 project(o.05.05)
 add_executable(o.05.05 offline/05.05.cpp)
+
+project(o.05.09)
+add_executable(o.05.09 offline/05.09.cpp)
