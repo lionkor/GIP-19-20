@@ -50,8 +50,9 @@ add_executable(06.01 06.01.cpp wortspiegel.cpp)
 project(06.02)
 add_executable(06.02 06.02.cpp)
 
-#project(06.03)
-#add_executable(06.03 06.03.cpp)
+project(06.03)
+add_executable(06.03 06.03.cpp)
+target_link_libraries(06.03 X11 pthread)
 
 
 # offline
