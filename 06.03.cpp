@@ -16,16 +16,15 @@ int main()
 
     while (gip_window_not_closed())
     {
-        gip_draw_rectangle(
-                left_border,    100, 
-                right_border,  500,
-                blue);
+        gip_draw_rectangle(left_border, 100, right_border, 500, blue);
 
-        gip_draw_rectangle(
-                x                 , y,
-                x + rectangle_size, y + rectangle_size,
-                white);
+        gip_draw_rectangle(x, y, x + rectangle_size, y + rectangle_size, white);
 
+        if (x <= left_border || x + rectangle_size >= right_border)
+            delta *= -1;
+        
+        x += delta;
+        
         gip_wait(100);
     }
     return 0;
