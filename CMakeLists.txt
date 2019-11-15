@@ -47,8 +47,8 @@ add_executable(05.03 05.03.cpp)
 project(06.01)
 add_executable(06.01 06.01.cpp wortspiegel.cpp)
 
-#project(06.02)
-#add_executable(06.02 06.02.cpp)
+project(06.02)
+add_executable(06.02 06.02.cpp)
 
 #project(06.03)
 #add_executable(06.03 06.03.cpp)

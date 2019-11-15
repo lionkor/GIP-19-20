@@ -4,6 +4,25 @@
 bool is_digit(char c) { return (c >= '0' && c <= '9'); }
 int as_digit(char c) { return c - '0'; }
 
+void print_invalid(std::string what, unsigned where, unsigned numbers[9], bool& is_valid)
+{
+    for (unsigned i = 0; i < 9; ++i)
+    {
+        if (!numbers[i])
+        {
+            std::cout << what << " " << where << ": Zahl " << i+1 
+                << " kommt nicht vor." << std::endl;
+            is_valid = false;
+        }
+        else if (numbers[i] > 1)
+        {
+            std::cout << what << " " << where << ": Zahl " << i+1
+                << " kommt mehrfach vor." << std::endl;
+            is_valid = false;
+        }
+    }
+}
+
 int main()
 {
     int sudoku[9][9] { 0 };
@@ -37,26 +56,46 @@ int main()
         ++array_x;
     }
 
+    bool is_valid { true };
 
-    std::cout << std::endl << "Das Sudoku lautet:" << std::endl;
-
-    // print loop
+    // columns
     for (unsigned y = 0; y < 9; ++y)
     {
+        unsigned column[9] { 0 };
         for (unsigned x = 0; x < 9; ++x)
         {
-            std::cout << ';' << sudoku[y][x];
+            ++column[sudoku[x][y] - 1];
+        }
+        print_invalid("Spalte", y, column, is_valid);
+    }
 
-            // every third "column" that isn't the last one
-            if (!((x + 1) % 3) && x + 1 < 9)
+    // rows
+    for (unsigned y = 0; y < 9; ++y)
+    {
+        unsigned row[9] { 0 };
+        for (unsigned x = 0; x < 9; ++x)
+        {
+            ++row[sudoku[y][x] - 1];
+        }
+        print_invalid("Zeile", y, row, is_valid);
+    }
+
+    // blocks
+    for (unsigned block_n = 0; block_n < 9; ++block_n)
+    {
+        unsigned block[9] { 0 };
+        for (int x = block_n/3*3; x < block_n/3*3+3; ++x)
+        {
+            for (int y = block_n%3*3; y < block_n%3*3+3; ++y)
             {
-                std::cout << ";//";
+                ++block[sudoku[x][y] - 1];
             }
         }
-        std::cout << std::endl;
-        if (!((y + 1) % 3) && y + 1 < 9)
-            std::cout << "=======//=======//=======" << std::endl;
+        print_invalid("Block", block_n, block, is_valid);
     }
+
+    if (is_valid)
+        std::cout << "Das Sudoku ist gueltig." << std::endl;
 
     return 0;
 }
