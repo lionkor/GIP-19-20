@@ -4,9 +4,9 @@
 bool is_digit(char c) { return (c >= '0' && c <= '9'); }
 int as_digit(char c) { return c - '0'; }
 
-void print_invalid(std::string what, unsigned where, unsigned numbers[9], bool& is_valid)
+void print_invalid(std::string what, unsigned where, unsigned numbers[8], bool& is_valid)
 {
-    for (unsigned i = 0; i < 9; ++i)
+    for (unsigned i = 0; i < 8; ++i)
     {
         if (!numbers[i])
         {
@@ -56,12 +56,29 @@ int main()
         ++array_x;
     }
 
+    // In the following loops the arrays work like this:
+    //  The array is of size 9.
+    //  Each index 'i' holds the amount of times the number i+1 was seen in the sudoku. 
+    //  Therefore, to increment the counter of a single number, the 'i-1'-th index is 
+    //  incremented. 
+    //
+    // Example: We have an array that holds occurances of a number in a column:
+    //    unsigned column[8] {0};
+    //   Now we see a '5' in the sudoku, so we want to increase that counter:
+    //    ++column[5 - 1];
+    //   We increased the 5th index, 4, by 1. Now the array looks like this:
+    //  
+    //    i    : 0 1 2 3 4 5 6 7 8
+    //    value: 0 0 0 0 1 0 0 0 0
+    //
+    //   number: 1 2 3 4 5 6 7 8 9  (i + 1)
+
     bool is_valid { true };
 
     // columns
     for (unsigned y = 0; y < 9; ++y)
     {
-        unsigned column[9] { 0 };
+        unsigned column[8] { 0 };
         for (unsigned x = 0; x < 9; ++x)
         {
             ++column[sudoku[x][y] - 1];
@@ -72,7 +89,7 @@ int main()
     // rows
     for (unsigned y = 0; y < 9; ++y)
     {
-        unsigned row[9] { 0 };
+        unsigned row[8] { 0 };
         for (unsigned x = 0; x < 9; ++x)
         {
             ++row[sudoku[y][x] - 1];
@@ -83,7 +100,7 @@ int main()
     // blocks
     for (unsigned block_n = 0; block_n < 9; ++block_n)
     {
-        unsigned block[9] { 0 };
+        unsigned block[8] { 0 };
         for (int x = block_n/3*3; x < block_n/3*3+3; ++x)
         {
             for (int y = block_n%3*3; y < block_n%3*3+3; ++y)
