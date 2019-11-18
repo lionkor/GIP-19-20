@@ -6,7 +6,7 @@ int as_digit(char c) { return c - '0'; }
 
 void print_invalid(std::string what, unsigned where, unsigned numbers[8], bool& is_valid)
 {
-    for (unsigned i = 0; i < 8; ++i)
+    for (unsigned i = 0; i < 9; ++i)
     {
         if (!numbers[i])
         {
@@ -78,7 +78,7 @@ int main()
     // columns
     for (unsigned y = 0; y < 9; ++y)
     {
-        unsigned column[8] { 0 };
+        unsigned column[9] { 0 };
         for (unsigned x = 0; x < 9; ++x)
         {
             ++column[sudoku[x][y] - 1];
@@ -89,7 +89,7 @@ int main()
     // rows
     for (unsigned y = 0; y < 9; ++y)
     {
-        unsigned row[8] { 0 };
+        unsigned row[9] { 0 };
         for (unsigned x = 0; x < 9; ++x)
         {
             ++row[sudoku[y][x] - 1];
@@ -100,7 +100,7 @@ int main()
     // blocks
     for (unsigned block_n = 0; block_n < 9; ++block_n)
     {
-        unsigned block[8] { 0 };
+        unsigned block[9] { 0 };
         for (int x = block_n/3*3; x < block_n/3*3+3; ++x)
         {
             for (int y = block_n%3*3; y < block_n%3*3+3; ++y)
