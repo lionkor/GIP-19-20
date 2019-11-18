@@ -13,8 +13,6 @@ int find_begin_of_word(std::string& text, int pos)
     while (pos + offset_from_pos - 1 >= 0
            && is_alpha(text.at(pos + offset_from_pos - 1)))
     {
-        std::cout << "offset from pos: " << offset_from_pos
-            << std::endl;
         --offset_from_pos;
     }
     return pos + offset_from_pos;
@@ -27,8 +25,6 @@ int find_end_of_word(std::string& text, int begin)
     while (begin + offset_from_begin < text.size() 
            && is_alpha(text.at(begin + offset_from_begin)))
     {
-        std::cout << "offset from begin: " << offset_from_begin
-            << std::endl;
         ++offset_from_begin;
     }
     return begin + offset_from_begin;
