@@ -44,7 +44,6 @@ void wortspiegel(std::string &text, int pos)
 
     for (int i = 0; i < (end - begin) / 2; ++i)
     {
-        std::cout << "i: " << i << std::endl;
         swap(text.at(begin + i), text.at(end - 1 - i));
     }
 }
