@@ -37,11 +37,6 @@ void swap(char& first, char& second)
     second = tmp;
 }
 
-int abs(int x)
-{
-    return x < 0 ? -x : x;
-}
-
 void wortspiegel(std::string &text, int pos)
 {
     int begin = find_begin_of_word(text, pos);
