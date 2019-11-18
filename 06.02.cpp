@@ -63,7 +63,7 @@ int main()
     //  incremented. 
     //
     // Example: We have an array that holds occurances of a number in a column:
-    //    unsigned column[8] {0};
+    //    unsigned column[9] {0};
     //   Now we see a '5' in the sudoku, so we want to increase that counter:
     //    ++column[5 - 1];
     //   We increased the 5th index, 4, by 1. Now the array looks like this:
