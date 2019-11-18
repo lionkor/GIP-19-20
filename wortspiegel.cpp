@@ -10,7 +10,6 @@ int find_begin_of_word(std::string& text, int pos)
 {
     if (!is_alpha(text.at(pos))) return pos + 0;
     int offset_from_pos = 0;
-    std::cout << "pos            : " << pos << std::endl;
     while (pos + offset_from_pos - 1 >= 0
            && is_alpha(text.at(pos + offset_from_pos - 1)))
     {
@@ -25,7 +24,6 @@ int find_end_of_word(std::string& text, int begin)
 {
     if (!is_alpha(text.at(begin))) return begin + 0;
     int offset_from_begin = 0;
-    std::cout << "begin            : " << begin << std::endl;
     while (begin + offset_from_begin < text.size() 
            && is_alpha(text.at(begin + offset_from_begin)))
     {
@@ -52,9 +50,6 @@ void wortspiegel(std::string &text, int pos)
 {
     int begin = find_begin_of_word(text, pos);
     int end = find_end_of_word(text, begin);
-
-    std::cout << "begin: " << begin << "(" << text.at(begin) << ")" << std::endl;
-    std::cout << "end  : " << end   << "(" << text.at(end - 1)   << ")" << std::endl;
 
     for (int i = 0; i < (end - begin) / 2; ++i)
     {
