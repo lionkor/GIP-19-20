@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 bool expect(char c, std::string &input, int pos)
 {
