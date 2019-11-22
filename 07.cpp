@@ -87,11 +87,13 @@ void parse_ausdruck(std::string& input, int& pos)
         {
             std::cout << "Betrete parse_ausdruck(): U Fall" << std::endl;
             match('U', input, pos);
+            std::cout << "Verlasse parse_ausdruck(): U Fall" << std::endl;
         }
         else
         {
             std::cout << "Betrete parse_ausdruck(): O Fall" << std::endl;
             match('O', input, pos);
+            std::cout << "Verlasse parse_ausdruck(): O Fall" << std::endl;
         }
         parse_term(input, pos);
     }
@@ -109,11 +111,13 @@ void parse_term(std::string& input, int& pos)
         {
             std::cout << "Betrete parse_term(): > Fall" << std::endl;
             match('>', input, pos);
+            std::cout << "Verlasse parse_term(): > Fall" << std::endl;
         }
         else
         {
             std::cout << "Betrete parse_term(): < Fall" << std::endl;
             match('<', input, pos);
+            std::cout << "Verlasse parse_term(): < Fall" << std::endl;
         }
         parse_operand(input, pos);
     }
@@ -130,6 +134,7 @@ void parse_operand(std::string& input, int& pos)
         match('(', input, pos);
         parse_ausdruck(input, pos);
         match(')', input, pos);
+        std::cout << "Verlasse parse_operand(): () Fall" << std::endl;
     }
     else
     {
