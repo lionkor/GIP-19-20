@@ -1,6 +1,26 @@
 #include <iostream>
 #include <string>
 
+bool expect(char c, std::string &input, int pos);
+void match(char c, std::string& input, int& pos);
+void parse_number(std::string& input, int& pos);
+void parse_operand(std::string& input, int& pos);
+void parse_term(std::string& input, int& pos);
+void parse_ausdruck(std::string& input, int& pos);
+void parse_gesamtausdruck(std::string& input, int& pos);
+
+int main(int, char**)
+{
+    int pos = 0;
+    std::string input = "";
+    std::cout << "Bitte geben Sie die Zeichenkette ein: ";
+    getline(std::cin, input);
+    parse_gesamtausdruck(input, pos);
+    if (pos != input.length())
+    std::cout << "Error! Noch Input-Zeichen uebrig." << std::endl;
+    return 0;    
+}
+
 bool expect(char c, std::string &input, int pos)
 {
     std::cout << "Teste auf das Zeichen " << c << std::endl;
@@ -47,29 +67,6 @@ void match(char c, std::string& input, int& pos)
     std::cout << "Verlasse match() fuer das Zeichen "
         << c << std::endl;
     
-}
-
-void parse_number(std::string& input, int& pos);
-
-void parse_operand(std::string& input, int& pos);
-
-void parse_term(std::string& input, int& pos);
-
-void parse_ausdruck(std::string& input, int& pos);
-
-void parse_gesamtausdruck(std::string& input, int& pos);
-
-int main(int, char**)
-{
-    int pos = 0;
-    std::string input = "";
-    std::cout << "Bitte geben Sie die Zeichenkette ein: ";
-    getline(std::cin, input);
-    parse_gesamtausdruck(input, pos);
-    if (pos != input.length())
-    std::cout << "Error! Noch Input-Zeichen uebrig." << std::endl;
-    return 0;    
-}
 
 void parse_gesamtausdruck(std::string& input, int& pos)
 {
