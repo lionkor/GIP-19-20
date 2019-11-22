@@ -66,7 +66,7 @@ void match(char c, std::string& input, int& pos)
     std::cout << "Zeichen " << c << " konsumiert.\n";
     std::cout << "Verlasse match() fuer das Zeichen "
         << c << std::endl;
-    
+}
 
 void parse_gesamtausdruck(std::string& input, int& pos)
 {
