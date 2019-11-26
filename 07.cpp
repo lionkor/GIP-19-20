@@ -164,7 +164,7 @@ void parse_number(std::string& input, int& pos)
         match('7', input, pos);
     else if (expect('8', input, pos))
         match('8', input, pos);
-    else
+    else if (expect('9', input, pos))
         match('9', input, pos);
     std::cout << "Verlasse parse_number()" << std::endl;
 }
