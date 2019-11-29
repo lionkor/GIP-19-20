@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_COMPILER clang++)
+set(CMAKE_CXX_COMPILER g++)
 
 project(02.01)
 add_executable(02.01 02.01.cpp)
@@ -51,12 +51,18 @@ add_executable(06.01 06.01.cpp wortspiegel.cpp)
 project(06.02)
 add_executable(06.02 06.02.cpp)
 
-#project(06.03)
-#add_executable(06.03 06.03.cpp)
-#target_link_libraries(06.03 X11 pthread)
+project(06.03)
+add_executable(06.03 06.03.cpp)
+target_link_libraries(06.03 X11 pthread)
 
 project(07)
 add_executable(07 07.cpp)
+
+project(08.01)
+add_executable(08.01 08.01.cpp person.cpp texte.cpp)
+
+project(08.02)
+add_executable(08.02 08.02.cpp)
 
 # offline
 
