@@ -63,6 +63,7 @@ add_executable(08.01 08.01.cpp person.cpp texte.cpp)
 
 project(08.02)
 add_executable(08.02 08.02.cpp)
+target_link_libraries(08.02 X11 pthread)
 
 # offline
 
