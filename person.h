@@ -5,11 +5,11 @@
 
 struct Person
 {
-    std::string vorname;
-    std::string nachname;
-    std::string geburtsdatum;
+	std::string vorname;
+	std::string nachname;
+	std::string geburtsdatum;
 };
 
 Person extrahiere_person(std::string eingabezeile);
 
-#endif//PERSON_H
+#endif // PERSON_H
