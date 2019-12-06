@@ -2,5 +2,6 @@
 
 clear
 cmake -DCMAKE_BUILD_TYPE=Debug .
-make -j 9
+# run "./make.sh all" to build all, or e.g. "./make.sh 06.01" to only build 06.01
+make $1 -j 9 
 
