@@ -92,7 +92,7 @@ void in_liste_einfuegen(Node*& anker, int wert_neu, int vor_wert)
 
 	if (!anker)
 	{
-		anker = new Node { wert_neu, nullptr, nullptr };
+		anker = new_node;
 	}
 	else
 	{
@@ -126,27 +126,76 @@ void in_liste_einfuegen(Node*& anker, int wert_neu, int vor_wert)
 	}
 }
 
+void liste_loeschen(Node*& anker)
+{
+    Node* current = anker;
+    while (current != nullptr)
+    {
+        Node* to_delete = current;
+        current = current->next;
+        delete to_delete;
+    }
+    anker = nullptr;
+}
+
+void aus_liste_loeschen(Node*& anker, int wert)
+{
+    Node* ptr = anker;
+    while (ptr && ptr->data != wert)
+        ptr = ptr->next;
+    
+    if (ptr)
+    {
+        Node* next = ptr->next;
+        ptr->prev->next = ptr->next;
+        next->prev = ptr->prev;
+        delete ptr;
+    }
+}
 
 int main(int, char**)
 {
-	const int laenge = 10;
-	Node*	  anker	 = nullptr;
+    const int laenge = 10;
+    Node* anker = nullptr;
+    liste_ausgeben(anker);
+    liste_ausgeben_rueckwaerts(anker);
+    liste_loeschen(anker);
+    
+    hinten_anfuegen(anker, 77);
+    hinten_anfuegen(anker, 88);
+    hinten_anfuegen(anker, 99);
+    
+    liste_ausgeben(anker);
+    liste_ausgeben_rueckwaerts(anker);
+    
+    liste_loeschen(anker); // war: aus_liste_loeschen(anker, 99);
+    liste_ausgeben(anker);
+    liste_ausgeben_rueckwaerts(anker);
+    
+    for (int i = 0; i < laenge; i++)
+        in_liste_einfuegen(anker, i*i, 9999);
 
-	for (int i = 0; i < laenge; i++)
-		in_liste_einfuegen(anker, i * i, 9999);
-
-	liste_ausgeben(anker);
-	liste_ausgeben_rueckwaerts(anker);
-
-	int wert_neu = 0, vor_wert = 0;
-	std::cout << "Einzufuegender Wert: ";
-	std::cin >> wert_neu;
-	std::cout << "Vor welchem Wert? ";
-	std::cin >> vor_wert;
-	in_liste_einfuegen(anker, wert_neu, vor_wert);
-
-	liste_ausgeben(anker);
-	liste_ausgeben_rueckwaerts(anker);
-
+    liste_ausgeben(anker);
+    liste_ausgeben_rueckwaerts(anker);
+    
+    in_liste_einfuegen(anker, -1, 0);
+    in_liste_einfuegen(anker, 24, 25);
+    in_liste_einfuegen(anker, 80, 81);
+    in_liste_einfuegen(anker, 99, 9999);
+    
+    liste_ausgeben(anker);
+    liste_ausgeben_rueckwaerts(anker);
+    
+    aus_liste_loeschen(anker, 24);
+    aus_liste_loeschen(anker, 80);
+    
+    liste_ausgeben(anker);
+    liste_ausgeben_rueckwaerts(anker);
+    
+    liste_loeschen(anker);
+    
+    liste_ausgeben(anker);
+    liste_ausgeben_rueckwaerts(anker);
+    
 	return 0;
 }
