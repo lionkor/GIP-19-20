@@ -2,47 +2,47 @@
 
 int main()
 {
-    int start_time_hours;
-    int start_time_minutes;
-    int step_minutes;
+	int start_time_hours;
+	int start_time_minutes;
+	int step_minutes;
 
-    do
-    {
-        std::cout << "Bitte geben Sie die Stunden der Startuhrzeit ein: ";
-        std::cin >> start_time_hours;
-    } while (start_time_hours < 0 || start_time_hours > 23);
+	do
+	{
+		std::cout << "Bitte geben Sie die Stunden der Startuhrzeit ein: ";
+		std::cin >> start_time_hours;
+	} while (start_time_hours < 0 || start_time_hours > 23);
 
-    do
-    {
-        std::cout << "Bitte geben Sie die Minuten der Startuhrzeit ein: ";
-        std::cin >> start_time_minutes;
-    } while (start_time_minutes < 0 || start_time_minutes > 59);
+	do
+	{
+		std::cout << "Bitte geben Sie die Minuten der Startuhrzeit ein: ";
+		std::cin >> start_time_minutes;
+	} while (start_time_minutes < 0 || start_time_minutes > 59);
 
-    std::cout << "Der erste Bus fährt also um " << start_time_hours << ":"
-              << start_time_minutes << " Uhr ." << std::endl;
+	std::cout << "Der erste Bus fährt also um " << start_time_hours << ":"
+			  << start_time_minutes << " Uhr ." << std::endl;
 
-    do
-    {
-        std::cout << "Bitte geben Sie die Taktzeit in Minuten ein: ";
-        std::cin >> step_minutes;
-    } while (step_minutes < 0 || step_minutes > 180);
+	do
+	{
+		std::cout << "Bitte geben Sie die Taktzeit in Minuten ein: ";
+		std::cin >> step_minutes;
+	} while (step_minutes < 0 || step_minutes > 180);
 
-    int hours = start_time_hours;
-    int minutes = start_time_minutes;
+	int hours	= start_time_hours;
+	int minutes = start_time_minutes;
 
-    std::cout << hours << ":" << minutes << " ";
+	std::cout << hours << ":" << minutes << " ";
 
-    do
-    {
-        minutes += step_minutes;
-        if (minutes >= 60)
-        {
-            hours += minutes / 60;
-            minutes = minutes % 60;
-            std::cout << std::endl;
-        }
-        std::cout << hours << ":" << minutes << " ";
-    } while (!(hours + (minutes + step_minutes) / 60 >= 24));
+	do
+	{
+		minutes += step_minutes;
+		if (minutes >= 60)
+		{
+			hours += minutes / 60;
+			minutes = minutes % 60;
+			std::cout << std::endl;
+		}
+		std::cout << hours << ":" << minutes << " ";
+	} while (!(hours + (minutes + step_minutes) / 60 >= 24));
 
-    std::cout << std::endl;
+	std::cout << std::endl;
 }
