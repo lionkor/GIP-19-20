@@ -20,11 +20,7 @@ NamespaceIndentation: None
 PointerAlignment: Left
 Standard: Auto
 TabWidth: '4'
-<<<<<<< HEAD
 UseTab: Never
-=======
-UseTab: Always
->>>>>>> c85697228145fdcd06446bd016ad2ce0038bfe85
 SpaceBeforeCtorInitializerColon: 'true'
 SpaceBeforeInheritanceColon: 'true'
 AlignConsecutiveAssignments: 'true'
@@ -35,16 +31,9 @@ AlignTrailingComments: 'true'
 AllowAllConstructorInitializersOnNextLine: 'true'
 AllowShortCaseLabelsOnASingleLine: 'false'
 AllowShortFunctionsOnASingleLine: InlineOnly
-<<<<<<< HEAD
 AllowShortIfStatementsOnASingleLine: 'false'
 AllowShortLoopsOnASingleLine: 'false'
 ColumnLimit: 90
 SortIncludes: 'false'
 AccessModifierOffset: -4
 SpaceAfterTemplateKeyword: 'false'
-=======
-AllowShortIfStatementsOnASingleLine: WithoutElse
-AllowShortLoopsOnASingleLine: 'false'
-ColumnLimit: 90
-SortIncludes: 'false'
->>>>>>> c85697228145fdcd06446bd016ad2ce0038bfe85
