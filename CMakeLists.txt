@@ -68,6 +68,9 @@ target_link_libraries(08.02 X11 pthread)
 project(09)
 add_executable(09 09.cpp)
 
+project(10.01)
+add_executable(10.01 10.01.cpp 10/binaerer_suchbaum.cpp)
+
 # offline
 
 project(o.01.01)
