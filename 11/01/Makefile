@@ -1,8 +1,8 @@
 MAIN_EXECUTABLE = main
-CXX 			= g++
-LD				= g++
-CXXFLAGS	    = -Wall -Wextra
-OBJS			= \
+CXX = g++
+LD = g++
+CXXFLAGS = -Wall -Wextra
+OBJS = \
 	main.o\
 	sort.o
 
