@@ -1,6 +1,7 @@
 # WARNING: This makefile is configured for UNIX (Linux/MacOSX).
 # 	To make it work on Windows, you have to replace the commands 
-# 	in the %.o and $(MAIN_EXECUTABLE) targets.
+# 	in the %.o and $(MAIN_EXECUTABLE) targets (with cl and link), 
+#	and change the clean target's command to use `del`.
 
 
 MAIN_EXECUTABLE = main
