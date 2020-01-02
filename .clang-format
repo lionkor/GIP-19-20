@@ -1,8 +1,8 @@
 ﻿SpaceBeforeCpp11BracedList: 'true'
 AlignEscapedNewlinesLeft: 'true'
-AllowShortBlocksOnASingleLine: 'true'
-AllowShortFunctionsOnASingleLine: Inline
-AllowShortIfStatementsOnASingleLine: 'true'
+AllowShortBlocksOnASingleLine: 'false'
+AllowShortFunctionsOnASingleLine: 'false'
+AllowShortIfStatementsOnASingleLine: 'false'
 AllowShortLoopsOnASingleLine: 'false'
 AlwaysBreakBeforeMultilineStrings: 'true'
 AlwaysBreakTemplateDeclarations: 'true'
@@ -33,7 +33,7 @@ AllowShortCaseLabelsOnASingleLine: 'false'
 AllowShortFunctionsOnASingleLine: InlineOnly
 AllowShortIfStatementsOnASingleLine: 'false'
 AllowShortLoopsOnASingleLine: 'false'
-ColumnLimit: 90
+ColumnLimit: 130
 SortIncludes: 'false'
 AccessModifierOffset: -4
 SpaceAfterTemplateKeyword: 'false'
