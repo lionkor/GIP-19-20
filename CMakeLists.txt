@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_COMPILER g++)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++17 -Wall -Wextra")
 
 project(02.01)
 add_executable(02.01 02.01.cpp)
@@ -70,6 +71,13 @@ add_executable(09 09.cpp)
 
 project(10.01)
 add_executable(10.01 10.01.cpp 10/binaerer_suchbaum.cpp)
+
+project(10.02)
+add_executable(10.02 10.02.cpp 10.02.dir/suchen.h 10.02.dir/catch.h 10.02.dir/unit_tests.cpp 10.02.dir/suchen.cpp)
+
+project(11.02)
+add_executable(11.02 11.02.cpp)
+target_link_libraries(11.02 X11 pthread)
 
 # offline
 

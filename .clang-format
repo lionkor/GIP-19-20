@@ -33,7 +33,7 @@ AllowShortCaseLabelsOnASingleLine: 'false'
 AllowShortFunctionsOnASingleLine: InlineOnly
 AllowShortIfStatementsOnASingleLine: 'false'
 AllowShortLoopsOnASingleLine: 'false'
-ColumnLimit: 130
+ColumnLimit: 120
 SortIncludes: 'false'
 AccessModifierOffset: -4
 SpaceAfterTemplateKeyword: 'false'
