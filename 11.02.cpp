@@ -25,7 +25,9 @@ unsigned count_alive_cells_around(bool grid[][grid_size], int x, int y)
                 y + k >= 0 && 
                 y + k < grid_size &&
                 grid[x + i][y + k])
+            {
                 ++count;
+            }
         }
     }
     return count;
@@ -36,11 +38,15 @@ void process_cell(bool old_grid[][grid_size], bool grid[][grid_size], int x, int
 {
     unsigned count = count_alive_cells_around(old_grid, x, y);
 
-    if (!old_grid[x][y] && count == 3)
+    if (count == 3)
     {
         grid[x][y] = true;
     }
-    else if (old_grid[x][y] && count != 2 && count != 3)
+    else if (old_grid[x][y] && (count == 2 || count == 3))
+    {
+        grid[x][y] = true;
+    }
+    else
     {
         grid[x][y] = false;
     }
@@ -59,11 +65,12 @@ int main()
         // Spielfeld anzeigen ...
         gip_stop_updates(); // ... schaltet das Neuzeichnen nach jeder Bildschirmaenderung aus
 
+        gip_background(128);
         for (int x = 0; x < grid_size; ++x)
         {
             for (int y = 0; y < grid_size; ++y)
             {
-                auto color = white;
+                auto color = blue;
                 if (grid[x][y])
                     color = green;
                 gip_draw_rectangle(border + x * box_size, border + y * box_size, border + x * box_size + box_size,
