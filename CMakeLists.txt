@@ -79,6 +79,14 @@ project(11.02)
 add_executable(11.02 11.02.cpp)
 target_link_libraries(11.02 X11 pthread)
 
+project(12.01)
+add_executable(12.01 12/12.01_and_02.cpp 12/MyRectangle.cpp)
+target_link_libraries(12.01 X11 pthread)
+
+project(12.03)
+add_executable(12.03 12/03/main.cpp 12/03/collision_test.cpp 12/03/MyRectangle.cpp)
+target_link_libraries(12.03 X11 pthread)
+
 # offline
 
 project(o.01.01)
