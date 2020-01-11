@@ -1,4 +1,6 @@
 o.*
+main
+a.out
 *.o
 *.user
 *.01
