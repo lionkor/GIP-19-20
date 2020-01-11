@@ -15,15 +15,19 @@ std::string padded(const std::string& to_pad, std::size_t amount) {
 }
 
 int main() {
-    std::string strings[4];
-    std::size_t max_len { 0 };
+    std::vector<std::string> strings;
+    std::size_t              max_len { 0 };
     for (int i = 0; i < 4; ++i) {
-        q(strings[i], "Textzeile = ? ");
-        if (strings[i].size() > max_len)
-            max_len = strings[i].size();
+        std::string s;
+        q(s, "Textzeile = ? ");
+        if (s.empty())
+            break;
+        if (s.size() > max_len)
+            max_len = s.size();
+        strings.push_back(s);
     }
-    for (int i = 0; i < 4; ++i) {
-        std::cout << padded(strings[i], max_len - strings[i].size()) << std::endl;
-    }
+
+    for (const std::string& s : strings)
+        std::cout << padded(s, max_len - s.size()) << std::endl;
 }
 
