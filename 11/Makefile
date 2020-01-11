@@ -5,9 +5,9 @@
 
 
 MAIN_EXECUTABLE = main
-CXX = g++
-LD = g++
-CXXFLAGS = -Wall -Wextra
+CXX = clang++
+LD = clang++
+CXXFLAGS = -Wall -Wextra -g
 OBJS = \
 	main.o\
 	sort.o
@@ -16,15 +16,15 @@ all: $(MAIN_EXECUTABLE)
 .PHONY: all
 
 $(MAIN_EXECUTABLE): $(OBJS) 
-	$(LD) -o $@ *.o
+	$(LD) -o $@ $^
 
-%.o: %.cpp %.h
-	$(CXX) -c $< -o $@ $(CXXFLAGS)
+%.o: %.cpp
+	$(CXX) -c $< -o $@ $(CXXFLAGS) 
 
 clean:
-	rm *.o
+	rm -f *.o
 
 distclean: clean
-	rm main
+	rm -f $(MAIN_EXECUTABLE)
 
 .PHONY: clean distclean

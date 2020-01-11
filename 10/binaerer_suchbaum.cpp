@@ -10,7 +10,7 @@ void insert(Suchbaum::BaumKnoten*& head, Suchbaum::BaumKnoten* node)
         if (node->value == current->value)
         {
             delete node;
-            return;
+            break;
         }
 
         if (node->value < current->value)
@@ -78,3 +78,4 @@ void Suchbaum::knoten_ausgeben(BaumKnoten* node, int depth)
     if (node->left_child)
         knoten_ausgeben(node->left_child, depth + 1);
 }
+

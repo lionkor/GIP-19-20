@@ -39,4 +39,11 @@ TEST_CASE("Zeichenkette suchen, Text mit Laenge 20 Zeichen")
 }
 TEST_CASE("Vorgegebene Testlaeufe")
 {
+    REQUIRE(zeichenkette_suchen("abcdefg", "bcd99") == -1);
+    REQUIRE(zeichenkette_suchen("abcdefg", "efg") == 4);
+    REQUIRE(zeichenkette_suchen("abc", "abcde") == -1);
+    REQUIRE(zeichenkette_suchen("012 abc abc 89", "abc") == 4);
+    REQUIRE(zeichenkette_suchen("xy abc abcdefgh", "abcde") == 7);
+    REQUIRE(zeichenkette_suchen("xyz 123 456 abc", "123 4") == 4);
+    REQUIRE(zeichenkette_suchen("abc defg", "abc d") == 0);
 }

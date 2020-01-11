@@ -19,6 +19,7 @@ int main()
     std::getline(std::cin, token);
 
     int pos = zeichenkette_suchen(input.c_str(), token.c_str());
+
     if (pos == -1)
     {
         std::cout << "Die Zeichenkette '" << token << "'  ist NICHT in dem Text '"

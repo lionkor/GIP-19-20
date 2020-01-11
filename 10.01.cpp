@@ -5,9 +5,8 @@ using namespace Suchbaum;
 
 int main()
 {
-    int input = 0;
-
-    BaumKnoten* head = nullptr;
+    int         input = 0;
+    BaumKnoten* head  = nullptr;
 
     ausgeben(head);
 
