@@ -2,7 +2,7 @@
 
 char* my_strconcat(const char* ptr1, const char* ptr2);
 
-int main(int, char**) {
+int main() {
     std::cout << "Bitte ersten Text eingeben (ggfs. mit Leerzeichen): ? ";
     std::string s1;
     std::getline(std::cin, s1);
