@@ -24,6 +24,9 @@ public:
     void              delete_all();
     CharListenKnoten* deep_copy() const;
     unsigned int      length() const;
+    char              at(unsigned int pos) const;
+    MyString2         operator+(char c) const;
+    std::string       to_string() const;
 };
 
 #endif // MY_STRING_2_H

@@ -11,8 +11,9 @@ MyString2::MyString2(const std::string& str)
     }
 
     CharListenKnoten* ptr = new CharListenKnoten(str.at(0));
-    for (const char& c : str) {
-        ptr->set_next(new CharListenKnoten(c));
+    m_anker               = ptr;
+    for (std::size_t i = 1; i < str.size(); ++i) {
+        ptr->set_next(new CharListenKnoten(str.at(i)));
         ptr = ptr->get_next();
     }
 }
@@ -24,7 +25,9 @@ MyString2::MyString2(const MyString2& str)
 MyString2& MyString2::operator=(const MyString2& str) {
     delete_all();
     m_anker = str.deep_copy();
+    return *this;
 }
+
 
 void MyString2::append(char c) {
     if (!m_anker)
@@ -56,6 +59,8 @@ MyString2::~MyString2() {
 }
 
 CharListenKnoten* MyString2::deep_copy() const {
+    if (!m_anker)
+        return nullptr;
     CharListenKnoten* new_ptr   = new CharListenKnoten(m_anker->get_data());
     CharListenKnoten* new_anker = new_ptr;
     CharListenKnoten* ptr       = m_anker;
@@ -68,5 +73,41 @@ CharListenKnoten* MyString2::deep_copy() const {
 }
 
 unsigned int MyString2::length() const {
-    // TODO
+    if (!m_anker)
+        return 0;
+    unsigned int count = 0;
+    for (CharListenKnoten* ptr = m_anker; ptr; ptr = ptr->get_next()) {
+        count++;
+    }
+    return count;
+}
+
+char MyString2::at(unsigned int pos) const {
+    unsigned int      count = 0;
+    CharListenKnoten* ptr   = m_anker;
+    while (ptr) {
+        if (count == pos)
+            return ptr->get_data();
+        ptr = ptr->get_next();
+        ++count;
+    }
+    return '\0';
+}
+
+MyString2 MyString2::operator+(char c) const {
+    MyString2 s(*this);
+    s.append(c);
+    return s;
+}
+
+std::string MyString2::to_string() const {
+    std::string s;
+    if (!m_anker)
+        return s;
+    CharListenKnoten* ptr = m_anker;
+    while (ptr) {
+        s += ptr->get_data();
+        ptr = ptr->get_next();
+    }
+    return s;
 }

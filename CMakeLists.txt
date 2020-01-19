@@ -96,6 +96,8 @@ add_executable(13.02
     13/02/main.cpp 
     13/02/unit_tests_charlistenknoten.cpp 
     13/02/unit_tests_mystring2_1.cpp 
+    13/02/unit_tests_mystring2_2.cpp 
+    13/02/unit_tests_mystring2_3.cpp 
     13/02/unit_tests_append.cpp 
     13/02/MyString2.cpp 
     13/02/unit_tests_delete_all.cpp
