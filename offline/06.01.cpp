@@ -21,7 +21,7 @@ int main() {
 void spalte_ab_erstem(char zeichen, std::string eingabe, std::string& erster_teil, std::string& zweiter_teil) {
     bool found = false;
     for (const char& c : eingabe) {
-        if (c == zeichen) {
+        if (!found && c == zeichen) {
             found = true;
             continue; // skip the char
         }

@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_COMPILER clang++)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++17 -Wall -Wextra")
+set(CMAKE_CXX_COMPILER /usr/lib/ccache/bin/clang++)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++17 -Wall -Wextra --pedantic")
 
 project(02.01)
 add_executable(02.01 02.01.cpp)
@@ -86,6 +86,20 @@ target_link_libraries(12.01 X11 pthread)
 project(12.03)
 add_executable(12.03 12/03/main.cpp 12/03/collision_test.cpp 12/03/MyRectangle.cpp)
 target_link_libraries(12.03 X11 pthread)
+
+project(13.01)
+add_executable(13.01 13/01/main.cpp 13/01/MyRectangle.cpp 13/01/MyFilledRectangle.cpp)
+target_link_libraries(13.01 X11 pthread)
+
+project(13.02)
+add_executable(13.02 
+    13/02/main.cpp 
+    13/02/unit_tests_charlistenknoten.cpp 
+    13/02/unit_tests_mystring2_1.cpp 
+    13/02/unit_tests_append.cpp 
+    13/02/MyString2.cpp 
+    13/02/unit_tests_delete_all.cpp
+)
 
 # offline
 

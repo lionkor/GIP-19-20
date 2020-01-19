@@ -25,3 +25,5 @@ Makefile
 *.cxxflags
 *.files
 *.includes
+*.gch
+*.tmp
